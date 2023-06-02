@@ -152,7 +152,7 @@ class Merchi_Integration_Public {
 			'hide_drafting' => get_post_meta(get_the_ID(), 'hideDrafting', true),
 		);
 		
-		$endpoint ='https://api.staging.merchi.co/v6/components/ProductEmbed/server_side_render/?apiKey=EAfBSrJah305GCk0__gn_Lp5X3kgHoaB8pLIbnqpTnbmgzXR4TBNuTLM4hKkKzVOpXR10B_zvLqt-I822-8QQQ&product='.$atts['id'].'&as_bundle=true';
+		$endpoint ='https://api.merchi.co/v6/components/ProductEmbed/server_side_render/?apiKey=EAfBSrJah305GCk0__gn_Lp5X3kgHoaB8pLIbnqpTnbmgzXR4TBNuTLM4hKkKzVOpXR10B_zvLqt-I822-8QQQ&product='.$atts['id'].'&as_bundle=true';
 		foreach( $atts as $key => $atr ){
 			if( "id" == $key ) continue;
 			if( "" == $atr || !$atr ) continue;
@@ -293,7 +293,7 @@ class Merchi_Integration_Public {
 	public function merchi_product_shortcode($atrs) { 
 		$curl = curl_init();
 		if(empty($atrs['id'])){
-			return 'Please provide the merchi product id';
+			return 'Please provide a Merchi product id';
 		}
 		$sync_keys = array(
 			'redirect_after_success_url' => 'redirectAfterSuccessUrl',
@@ -336,7 +336,7 @@ class Merchi_Integration_Public {
 			'allow_add_to_cart' => true,
 			'hide_drafting' => true,
 		), $atrs);
-		$endpoint ='https://api.staging.merchi.co/v6/components/ProductEmbed/server_side_render/?apiKey=EAfBSrJah305GCk0__gn_Lp5X3kgHoaB8pLIbnqpTnbmgzXR4TBNuTLM4hKkKzVOpXR10B_zvLqt-I822-8QQQ&product='.$atts['id'].'&as_bundle=true';
+		$endpoint ='https://api.merchi.co/v6/components/ProductEmbed/server_side_render/?apiKey=EAfBSrJah305GCk0__gn_Lp5X3kgHoaB8pLIbnqpTnbmgzXR4TBNuTLM4hKkKzVOpXR10B_zvLqt-I822-8QQQ&product='.$atts['id'].'&as_bundle=true';
 		foreach( $atts as $key => $atr ){
 			if( "id" == $key ) continue;
 			if( "" == $atr || !$atr ) continue;
