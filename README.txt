@@ -1,5 +1,5 @@
 === Plugin Name ===
-Tags: e-commerce, products
+Tags: e-commerce, products, Merchi
 Requires at least: 3.0.1
 Tested up to: 1
 Stable tag: 1
