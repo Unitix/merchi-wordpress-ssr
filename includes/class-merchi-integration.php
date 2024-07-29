@@ -194,8 +194,7 @@ class Merchi_Integration {
 		// $this->loader->add_action( 'woocommerce_before_add_to_cart_button', $plugin_public, 'woocommerce_before_add_to_cart' );
 		$this->loader->add_action( 'wp_head', $plugin_public, 'remove_woocommerce_before_main_content' );
 		$this->loader->add_action( 'woocommerce_before_single_product_summary', $plugin_public, 'woocommerce_before_add_to_cart' );
-		$this->loader->add_filter('the_content', $plugin_public, 'update_template');	
-        $this->loader->add_filter( 'the_title', $plugin_public, 'remove_title' );
+		$this->loader->add_filter('the_content', $plugin_public, 'update_template');
 
 	}
 
