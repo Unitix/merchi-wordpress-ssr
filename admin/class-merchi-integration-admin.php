@@ -286,68 +286,111 @@ function my_metaBox_HTML(){
       </div>
 	  <div class="card-header">Redirect With Value </div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="redirectWithValue" name="redirectWithValue" <?php checked( $redirectWithValue, 1, true );?> value="1">
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+        	<input type="checkbox" id="redirectWithValue" name="redirectWithValue" <?php checked( $redirectWithValue, 1, true );?> value="1">
+		</div>
       </div>
 	  <div class="card-header">Hide Info</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="hideInfo" name="hideInfo" <?php checked( $hideInfo, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="hideInfo" name="hideInfo" <?php checked( $hideInfo, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Hide Preview</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="hidePreview" name="hidePreview" <?php checked( $hidePreview, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="hidePreview" name="hidePreview" <?php checked( $hidePreview, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Hide Price</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="hidePrice" name="hidePrice" <?php checked( $hidePrice, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="hidePrice" name="hidePrice" <?php checked( $hidePrice, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Hide Title</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="hideTitle" name="hideTitle" <?php checked( $hideTitle, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="hideTitle" name="hideTitle" <?php checked( $hideTitle, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Hide Calculated Price</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="hideCalculatedPrice" name="hideCalculatedPrice" <?php checked( $hideCalculatedPrice, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="hideCalculatedPrice" name="hideCalculatedPrice" <?php checked( $hideCalculatedPrice, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Include Bootstrap</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="includeBootstrap" name="includeBootstrap" <?php checked( $includeBootstrap, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="includeBootstrap" name="includeBootstrap" <?php checked( $includeBootstrap, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Not Include Default CSS</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="notIncludeDefaultCss" name="notIncludeDefaultCss" <?php checked( $notIncludeDefaultCss, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="notIncludeDefaultCss" name="notIncludeDefaultCss" <?php checked( $notIncludeDefaultCss, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Invoice Redirect</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="invoiceRedirect" name="invoiceRedirect" <?php checked( $invoiceRedirect, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="invoiceRedirect" name="invoiceRedirect" <?php checked( $invoiceRedirect, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Load Theme</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="loadTheme" name="loadTheme" <?php checked( $loadTheme, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="loadTheme" name="loadTheme" <?php checked( $loadTheme, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Mount Point Id</div>
 	  <div class="card-body text-dark">
-        <input type="text" id="mountPointId" name="mountPointId" placeholder="Mount Point Id" value="<?php echo $mountPointId; ?>">
-      </div>
+		<label class="checkbox-label">Yes:</label>
+		<input type="text" id="mountPointId" name="mountPointId" placeholder="Mount Point Id" value="<?php echo $mountPointId; ?>">
+	  </div>
 	  <div class="card-header">Single Column</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="singleColumn" name="singleColumn" <?php checked( $singleColumn, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="singleColumn" name="singleColumn" <?php checked( $singleColumn, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Quote Requested Redirect</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="quoteRequestedRedirect" name="quoteRequestedRedirect" <?php checked( $quoteRequestedRedirect, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="quoteRequestedRedirect" name="quoteRequestedRedirect" <?php checked( $quoteRequestedRedirect, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Google API Public Key</div>
 	  <div class="card-body text-dark">
         <input type="text" id="googleApiPublicKey" name="googleApiPublicKey" placeholder="Google API Public Key" value="<?php echo $googleApiPublicKey; ?>">
       </div>
 	  <div class="card-header">Allow Add To Cart</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="allowAddToCart" name="allowAddToCart" <?php checked( $allowAddToCart, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="allowAddToCart" name="allowAddToCart" <?php checked( $allowAddToCart, 1, true );?> value="1">
+		</div>
+	  </div>
 	  <div class="card-header">Hide Drafting</div>
 	  <div class="card-body text-dark">
-        <input type="checkbox" id="hideDrafting" name="hideDrafting" <?php checked( $hideDrafting, 1, true );?> value="1">
-      </div>
+		<div class="checkbox-container">
+			<label class="checkbox-label">Yes:</label>
+			<input type="checkbox" id="hideDrafting" name="hideDrafting" <?php checked( $hideDrafting, 1, true );?> value="1">
+		</div>  
+	</div>
 <?php }
 
 

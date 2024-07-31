@@ -3,6 +3,7 @@
  * included in this file.
  */
 
+ /* Merchi Global Settings Page CSS */
  .wrap.plugin-body {
     background: #fff;
     padding: 20px;
@@ -16,4 +17,53 @@
 input#merchi_staging_mode {
     width: auto;
     min-width: auto;
+}
+
+/* Product Metabox CSS */
+#metaId {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.postbox-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-header {
+    font-weight: bold;
+    margin-top: 10px;
+	margin-bottom: 7px;
+}
+
+.card-body {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="checkbox"] {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.checkbox-container {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: auto;
+    margin-top: 3px;
+}
+
+input[type="text"], input[type="checkbox"] {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
