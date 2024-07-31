@@ -66,7 +66,7 @@ class MerchiSettings {
 
     public function merchi_api_secretFieldHtml() {
         $value = get_option('merchi_api_secret');
-        echo '<input type="text" id="merchi_api_secret" name="merchi_api_secret" value="' . esc_attr($value) . '" />';
+        echo '<input type="password" id="merchi_api_secret" name="merchi_api_secret" value="' . esc_attr($value) . '" />';
     }
 
     public function staging_merchi_urlFieldHtml() {
@@ -76,7 +76,7 @@ class MerchiSettings {
 
     public function staging_merchi_api_secretFieldHtml() {
         $value = get_option('staging_merchi_api_secret');
-        echo '<input type="text" id="staging_merchi_api_secret" name="staging_merchi_api_secret" value="' . esc_attr($value) . '" />';
+        echo '<input type="password" id="staging_merchi_api_secret" name="staging_merchi_api_secret" value="' . esc_attr($value) . '" />';
     }
 
     public function merchi_staging_modeFieldHtml() {
@@ -85,14 +85,9 @@ class MerchiSettings {
         echo '<input type="checkbox" id="merchi_staging_mode" name="merchi_staging_mode" value="1"' . $checked . '/>';
     }
 
-    public function merchi_api_session_tokenFieldHtml() {
-        $value = get_option('merchi_api_session_token');
-        echo '<input type="text" id="merchi_api_session_token" name="merchi_api_session_token" value="' . esc_attr($value) . '" />';
-    }
-
     public function settingsPageHtml() {
         ?>
-        <div class="wrap">
+        <div class="wrap plugin-body">
             <h1>Merchi Settings</h1>
             <form method="post" action="options.php">
                 <?php

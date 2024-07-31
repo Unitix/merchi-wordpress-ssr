@@ -2,3 +2,18 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+ .wrap.plugin-body {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 10px 20px #0000000f;
+}
+
+.plugin-body input {
+    min-width: 400px;
+}
+input#merchi_staging_mode {
+    width: auto;
+    min-width: auto;
+}
