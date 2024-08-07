@@ -4,6 +4,7 @@ class MerchiSettings {
     public function __construct() {
         add_action('admin_menu', [$this, 'addAdminMenu']);
         add_action('admin_init', [$this, 'registerSettings']);
+        add_action('init', [$this, 'defineConstants']);
     }
 
     public function addAdminMenu() {
@@ -18,12 +19,13 @@ class MerchiSettings {
         );
     }
 
-	public static function get($key) {
+    public static function get($key) {
         return get_option($key);
     }
 
     public function registerSettings() {
         $settings = [
+            ['merchi_domain_id', 'Merchi Domain ID'],
             ['merchi_url', 'Merchi URL'],
             ['merchi_api_secret', 'Merchi API Secret'],
             ['staging_merchi_url', 'Staging Merchi URL'],
@@ -57,6 +59,11 @@ class MerchiSettings {
 
     public function sanitizeInput($input) {
         return sanitize_text_field($input);
+    }
+
+    public function merchi_domain_idFieldHtml() {
+        $value = get_option('merchi_domain_id');
+        echo '<input type="text" id="merchi_domain_id" name="merchi_domain_id" value="' . esc_attr($value) . '" />';
     }
 
     public function merchi_urlFieldHtml() {
@@ -98,6 +105,28 @@ class MerchiSettings {
             </form>
         </div>
         <?php
+    }
+
+    public function defineConstants() {
+        $staging_mode = get_option('merchi_staging_mode');
+
+		if(!get_option('staging_merchi_url')){
+			update_option('staging_merchi_url', "https://api.staging.merchi.co");
+		} 
+		if(!get_option('merchi_url')){
+			update_option('merchi_url', "https://api.merchi.co");
+		}
+        
+		define('MERCHI_MODE', $staging_mode ? $staging_mode : false);
+        define('MERCHI_DOMAIN', get_option('merchi_domain_id'));
+        
+        if ($staging_mode) {
+            define('MERCHI_URL', get_option('staging_merchi_url'));
+            define('MERCHI_API_SECRET', get_option('staging_merchi_api_secret'));
+        } else {
+            define('MERCHI_URL', get_option('merchi_url'));
+            define('MERCHI_API_SECRET', get_option('merchi_api_secret'));
+        }
     }
 }
 

@@ -99,6 +99,12 @@ class Merchi_Integration_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/merchi-integration-admin.js', array( 'jquery' ), $this->version, false );
+		wp_localize_script( $this->plugin_name, 'scriptData', array(
+			'merchi_mode' => MERCHI_MODE,
+			'merchi_domain' => MERCHI_DOMAIN,
+			'merchi_url' => MERCHI_URL,
+			'merchi_secret' => MERCHI_API_SECRET
+		));
 
 	}
 
@@ -111,7 +117,7 @@ class Merchi_Integration_Admin {
 	public function my_custom_meta_box(){
 		$option_value = get_option('mpp_location');
 		if ( $option_value == 0) {
-		add_meta_box( 'metaId', 'Custom Meta Box', 'my_metaBox_HTML', 'product', 'side', 'high');
+		add_meta_box( 'metaId', 'Merchi Configuration', 'my_metaBox_HTML', 'product', 'side', 'high');
 	 }
 	}
 
@@ -124,7 +130,7 @@ class Merchi_Integration_Admin {
 	public function my_custom_meta_box_withought_woo(){
 		$option_value = get_option('mpp_location');
 		if ( $option_value == 1) {
-		add_meta_box('metaId', 'Custom Meta Box', 'my_metaBox_HTML', 'merchi-product', 'side', 'high');
+		add_meta_box('metaId', 'Merchi Configuration', 'my_metaBox_HTML', 'merchi-product', 'side', 'high');
 	}
 	}
 
@@ -272,9 +278,24 @@ function my_metaBox_HTML(){
 	$allowAddToCart = get_post_meta(get_the_ID(), 'allowAddToCart', true);
 	$hideDrafting = get_post_meta(get_the_ID(), 'hideDrafting', true);
 	?>
-      <div class="card-header">Merchi Product ID</div>
+	<input type="hidden" id="merchi_id" name="merchi_id" placeholder="Merchi Id" value="<?php echo $merchi_id; ?>">
        <div class="card-body text-dark">
-        <input type="text" id="merchi_id" name="merchi_id" placeholder="Merchi Id" value="<?php echo $merchi_id; ?>">
+        <div id="search_box" style="display: <?php echo (empty($product_name)) ? 'block' : 'none'; ?>">
+            <input type="text" id="custom_value_field" name="custom_value" list="custom_value_list"
+                placeholder="Enter Product Name">
+				<span class="cst-loader"></span>
+            <span class="search-icon"><span class="dashicons dashicons-search"></span></span>
+            <div id="search_results"></div>
+            <div class="loader">
+            </div>
+        </div>
+        <div id="selected_value_display"
+            style="display: <?php echo (empty($product_name)) ? 'none' : 'inline-block'; ?>">
+            <h3 style="margin-left: 5px; cursor: pointer;"><?php echo esc_html($product_name); ?></h3>
+        </div>
+        <h1 id="remove_selected_value"
+            style="display: <?php echo (empty($product_name)) ? 'none' : 'inline-block'; ?>; cursor: pointer;">&times;
+        </h1>
       </div>
 	  <div class="card-header">Redirect After Success URL</div>
 	  <div class="card-body text-dark">
