@@ -184,6 +184,9 @@ class Merchi_Integration_Public
         );
         
 		$credentials = $this->get_api_credentials(); // Get API credentials
+		if(empty($atts['id'])) {
+            return;
+        }
         $endpoint = $credentials['url'] . '/v6/components/ProductEmbed/server_side_render/?apiKey=' . $credentials['key'] . '&product=' . $atts['id'] . '&as_bundle=true';
 
         foreach( $atts as $key => $atr ){
