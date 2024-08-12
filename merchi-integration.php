@@ -66,6 +66,12 @@ register_deactivation_hook( __FILE__, 'deactivate_merchi_integration' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-merchi-integration.php';
 
 /**
+ * The core plugin class that is used to define Merchi Plugin Settings,
+ * admin-specific hooks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-merchi-integration-settings.php';
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,
